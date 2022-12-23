@@ -47,6 +47,30 @@ fetch('https://web-production-ed9c.up.railway.app/countries/1')
 </details>
 
 
+#### Limit results
+```
+fetch('https://web-production-ed9c.up.railway.app/countries?limit=5&offset=5')
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+[
+  {
+    "country_name": "string",
+    "id": 5
+  },
+  /*...*/
+  {
+    "country_name": "string",
+    "id": 10
+  }
+]
+</pre>
+</details>
+
+
 #### Add new country
 ```
 fetch('https://web-production-ed9c.up.railway.app/countries',{
@@ -184,6 +208,54 @@ fetch('https://web-production-ed9c.up.railway.app/categories/1')
 </pre>
 </details>
 
+#### Limit results
+```
+fetch('https://web-production-ed9c.up.railway.app/categories?limit=5&offset=5')
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+[
+  {
+    "name": "Электроника",
+    "id": 5,
+    "children_category": [
+      {
+        "name": "Телефоны и гаджеты",
+        "id": 6
+      }
+    ],
+    "parent_category": null
+  },
+  /*...*/
+  {
+    "name": "Телефоны и гаджеты",
+    "id": 9,
+    "children_category": [
+      {
+        "name": "Смартфоны",
+        "id": 7
+      }
+    ],
+    "parent_category": {
+      "name": "Электроника",
+      "id": 3
+    }
+  },
+  {
+    "name": "Смартфоны",
+    "id": 10,
+    "children_category": [],
+    "parent_category": {
+      "name": "Телефоны и гаджеты",
+      "id": 6
+    }
+  }
+]
+</pre>
+</details>
 
 #### Add new category
 ```
