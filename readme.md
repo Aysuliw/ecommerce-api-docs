@@ -722,4 +722,286 @@ fetch('https://ecommerce-h6sh.onrender.com/products/7',{
 </details>
 
 
+## Users
+#### Get all users
+```
+fetch('https://ecommerce-h6sh.onrender.com/users/')
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+
+[
+    {
+        "username": "string",
+        "is_admin": true,
+        "id": 1,
+        "user_detail": {
+            "first_name": "Any name",
+            "last_name": "Any surname",
+            "user_image": "www.somewebsite.com/user1.jpg",
+            "id": 1
+        },
+        "phone_numbers": [
+            {
+                "phone_number": "+998991234567",
+                "type": "mobile",
+                "id": 1
+            }
+        ],
+        "addresses": [
+            {
+                "street_address": "street 50",
+                "postal_code": "123100",
+                "city": "Nukus",
+                "id": 1,
+                "country": {
+                    "country_name": "Uzbekistan",
+                    "id": 2
+                }
+            }
+        ]
+    }, 
+    /***/
+    {},
+    {}
+]
+</pre>
+</details>
+
+#### Limit results
+```
+fetch('https://ecommerce-h6sh.onrender.com/users?limit=5')
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+
+[
+    {
+        "username": "string",
+        "is_admin": true,
+        "id": 1,
+        "user_detail": {
+            "first_name": "Any name",
+            "last_name": "Any surname",
+            "user_image": "www.somewebsite.com/user1.jpg",
+            "id": 1
+        },
+        "phone_numbers": [
+            {
+                "phone_number": "+998991234567",
+                "type": "mobile",
+                "id": 1
+            }
+        ],
+        "addresses": [
+            {
+                "street_address": "street 50",
+                "postal_code": "123100",
+                "city": "Nukus",
+                "id": 1,
+                "country": {
+                    "country_name": "Uzbekistan",
+                    "id": 2
+                }
+            }
+        ]
+    }, 
+    /***/
+    {"id":5},
+]
+</pre>
+</details>
+
+#### Get a single user
+```
+fetch('https://ecommerce-h6sh.onrender.com/users/1')
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+{
+    "username": "string",
+    "is_admin": true,
+    "id": 1,
+    "user_detail": {
+        "first_name": "Any name",
+        "last_name": "Any surname",
+        "user_image": "www.somewebsite.com/user1.jpg",
+        "id": 1
+    },
+    "phone_numbers": [
+        {
+            "phone_number": "+998991234567",
+            "type": "mobile",
+            "id": 1
+        }
+    ],
+    "addresses": [
+        {
+            "street_address": "street 50",
+            "postal_code": "123100",
+            "city": "Nukus",
+            "id": 1,
+            "country": {
+                "country_name": "Uzbekistan",
+                "id": 2
+            }
+        }
+    ]
+}
+</pre>
+</details>
+
+
+#### Add new user
+```
+fetch('https://ecommerce-h6sh.onrender.com/users',{
+            method:"POST",
+            body:JSON.stringify(
+                {
+                    "user": {
+                        "username": "string",
+                        "is_admin": false,
+                        "password": "string"
+                    },
+                    "user_detail": {
+                        "first_name": "Any name",
+                        "last_name": "Any surname",
+                        "user_image": "www.somewebsite.com/user1.jpg"
+                    },
+                    "user_phones": [
+                        {
+                            "phone_number": "+998991234567",
+                            "type": "mobile"
+                        }
+                    ],
+                    "user_address": {
+                        "street_address": "street 50",
+                        "postal_code": "123100",
+                        "city": "Nukus",
+                        "country_id": 2
+                    }
+                }
+            )
+        })
+        .then(res=>res.json())
+        .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+{
+    "username": "string",
+    "is_admin": true,
+    "id": 1,
+    "user_detail": {
+        "first_name": "Any name",
+        "last_name": "Any surname",
+        "user_image": "www.somewebsite.com/user1.jpg",
+        "id": 1
+    },
+    "phone_numbers": [
+        {
+            "phone_number": "+998991234567",
+            "type": "mobile",
+            "id": 1
+        }
+    ],
+    "addresses": [
+        {
+            "street_address": "street 50",
+            "postal_code": "123100",
+            "city": "Nukus",
+            "id": 1,
+            "country": {
+                "country_name": "Uzbekistan",
+                "id": 2
+            }
+        }
+    ]
+}
+</pre>
+</details>
+
+#### Update a user
+```
+fetch('https://ecommerce-h6sh.onrender.com/users/7',{
+            method:"PUT",
+            body:JSON.stringify(
+                {
+                    "user": {
+                        "username": "new username",
+                        "is_admin": true
+                    },
+                    "user_detail": {
+                        "first_name": "new name",
+                        "last_name": "Mambnew updated surname",
+                        "user_image": "www.somewebsite.com/user1.jpg"
+                    }
+                }
+            )
+        })
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+    {
+        "username": "new username",
+        "is_admin": true,
+        "id": 1,
+        "user_detail": {
+            "first_name": "new name",
+            "last_name": "new updated surname",
+            "user_image": "www.somewebsite.com/user1.jpg",
+            "id": 1
+        },
+        "phone_numbers": [
+            {
+                "phone_number": "+998991234567",
+                "type": "mobile",
+                "id": 1
+            }
+        ],
+        "addresses": [
+            {
+                "street_address": "street 50",
+                "postal_code": "123100",
+                "city": "Nukus",
+                "id": 1,
+                "country": {
+                    "country_name": "Uzbekistan",
+                    "id": 2
+                }
+            }
+        ]
+    }
+</pre>
+</details>
+
+#### Delete a user
+```
+fetch('https://ecommerce-h6sh.onrender.com/users/7',{
+            method:"DELETE"
+        })
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+  {
+    "ok": True
+  }
+</pre>
+</details>
 
