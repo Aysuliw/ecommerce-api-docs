@@ -1005,3 +1005,212 @@ fetch('https://ecommerce-h6sh.onrender.com/users/7',{
 </pre>
 </details>
 
+
+## Attributes
+
+#### Get category attributes
+```
+fetch('https://ecommerce-h6sh.onrender.com/categories/{category_id}/attributes')
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+[
+  {
+    "attribute_name": "color",
+    "category_id": 1,
+    "id": 1,
+    "variants": {
+      "value": "green",
+      "id": 1
+    },
+    {
+      "value": "red",
+      "id": 2
+    }
+  },
+  /*...*/
+  {
+    "attribute_name": "size",
+    "category_id": 1,
+    "id": 10,
+    "variants": {
+      "value": "300",
+      "id": 5
+    },
+    {
+      "value": "500",
+      "id": 6
+    }
+  },
+]
+</pre>
+</details>
+
+#### Get a single attribute
+```
+fetch('https://ecommerce-h6sh.onrender.com/attributes/1')
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+  {
+    "attribute_name": "color",
+    "category_id": 1,
+    "id": 1,
+    "variants": {
+      "value": "green",
+      "id": 1
+    },
+    {
+      "value": "red",
+      "id": 2
+    }
+  },
+</pre>
+</details>
+
+
+#### Limit results
+```
+fetch('https://ecommerce-h6sh.onrender.com/categories/{category_id}/attributes?limit=5&offset=0')
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+[
+  {
+    "attribute_name": "color",
+    "category_id": 1,
+    "id": 1,
+    "variants": {
+      "value": "green",
+      "id": 1
+    },
+    {
+      "value": "red",
+      "id": 2
+    }
+  },
+  /*...*/
+  {
+    "attribute_name": "size",
+    "category_id": 1,
+    "id": 5,
+    "variants": {
+      "value": "300",
+      "id": 5
+    },
+    {
+      "value": "500",
+      "id": 6
+    }
+  },
+]
+</pre>
+</details>
+
+
+#### Add new attribute
+```
+fetch('https://ecommerce-h6sh.onrender.com/attributes',{
+            method:"POST",
+            body:JSON.stringify(
+                {
+                  "attribute": {
+                    "attribute_name": "color",
+                    "category_id": 1
+                  },
+                  "variants": [
+                    {
+                      "value": "red"
+                    },
+                    {
+                      "value": "green"
+                    }
+                  ]
+                }
+            )
+        })
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+  {
+    "attribute_name": "color",
+    "category_id": 1,
+    "id": 5
+    "variants": [
+        {
+            "id": 7,
+            "value": "red"
+        },
+        {
+            "id": 8,
+            "value": "green"
+        }
+    ]
+  }
+</pre>
+</details>
+
+#### Update an attribute
+```
+fetch('https://ecommerce-h6sh.onrender.com/attributes/7',{
+            method:"PUT",
+            body:JSON.stringify(
+                {
+                    "attribute_name": 'Updated attribute name,
+                    "category_id": 12
+                }
+            )
+        })
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+{
+  "attribute_name": "updated attribute name",
+  "category_id": 12,
+  "id": 2,
+  "variants": [
+    {
+      "value": "green",
+      "id": 3
+    },
+    {
+      "value": "red",
+      "id": 4
+    }
+  ]
+}
+</pre>
+</details>
+
+#### Delete an attribute
+```
+fetch('https://ecommerce-h6sh.onrender.com/attributes/7',{
+            method:"DELETE"
+        })
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+  {
+    "ok": True
+  }
+</pre>
+</details>
+
