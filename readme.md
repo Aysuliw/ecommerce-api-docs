@@ -1162,6 +1162,30 @@ fetch('https://ecommerce-h6sh.onrender.com/attributes',{
 </pre>
 </details>
 
+
+#### Add new attribute variant
+```
+fetch('https://ecommerce-h6sh.onrender.com/attributes/{attribute_id}/variants',{
+            method:"POST",
+            body:JSON.stringify(
+                {
+                  "value": "blue"
+                }
+            )
+        })
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+  {
+      "value": "blue",
+      "id": 2
+  }
+</pre>
+</details>
+
 #### Update an attribute
 ```
 fetch('https://ecommerce-h6sh.onrender.com/attributes/7',{
@@ -1214,3 +1238,19 @@ fetch('https://ecommerce-h6sh.onrender.com/attributes/7',{
 </pre>
 </details>
 
+#### Delete an attribute variant
+```
+fetch('https://ecommerce-h6sh.onrender.com/attributes/{attribute_id}/variants/{variant_id}',{
+            method:"DELETE"
+        })
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+  {
+    "ok": True
+  }
+</pre>
+</details>
