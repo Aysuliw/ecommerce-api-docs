@@ -26,8 +26,7 @@ fetch('https://ecommerce-h6sh.onrender.com/login',{
 <details><summary>Output</summary>
 <pre>
   {
-    "country_name": "string",
-    "id": 11
+    "access_token": ""
   }
 </pre>
 </details>
@@ -1285,7 +1284,7 @@ fetch('https://ecommerce-h6sh.onrender.com/attributes/{attribute_id}/variants/{v
 ### Orders
 #### Get all order status
 ```
-fetch('https://ecommerce-h6sh.onrender.com/orders/status')
+fetch('https://ecommerce-h6sh.onrender.com/orders/status/')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -1308,7 +1307,7 @@ fetch('https://ecommerce-h6sh.onrender.com/orders/status')
 
 #### Get a single order status
 ```
-fetch('https://ecommerce-h6sh.onrender.com/orders/status/1')
+fetch('https://ecommerce-h6sh.onrender.com/orders/status/1/')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -1322,7 +1321,7 @@ fetch('https://ecommerce-h6sh.onrender.com/orders/status/1')
 </pre>
 </details>
 
-#### Add new country
+#### Add new order status
 ```
 fetch('https://ecommerce-h6sh.onrender.com/orders/status',{
             method:"POST",
@@ -1369,6 +1368,158 @@ fetch('https://ecommerce-h6sh.onrender.com/orders/status/7',{
 </details>
 
 #### Delete an order status
+```
+fetch('https://ecommerce-h6sh.onrender.com/orders/status/7',{
+            method:"DELETE"
+        })
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+  {
+    "ok": True
+  }
+</pre>
+</details>
+
+#### Get all orders
+```
+fetch('https://ecommerce-h6sh.onrender.com/orders/')
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+[
+  {
+    "status": "string",
+    "id": 1
+  },
+  /*...*/
+  {
+    "status": "string",
+    "id": 10
+  }
+]
+</pre>
+</details>
+
+
+#### Get all user orders
+```
+fetch('https://ecommerce-h6sh.onrender.com/orders/')
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+[
+  {
+    "status": "string",
+    "id": 1
+  },
+  /*...*/
+  {
+    "status": "string",
+    "id": 10
+  }
+]
+</pre>
+</details>
+
+#### Get a single user order 
+```
+fetch('https://ecommerce-h6sh.onrender.com/orders/status/1/')
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+  {
+    "status": "string",
+    "id": 1
+  }
+</pre>
+</details>
+
+#### Add new order
+```
+fetch('https://ecommerce-h6sh.onrender.com/orders/status',{
+            method:"POST",
+            body:JSON.stringify(
+                {
+                  "order": {
+                    "user_id": 1,
+                    "order_date": "2023-01-26",
+                    "address_id": 1,
+                    "order_status_id": 1
+                  },
+                  "order_details": [
+                    {
+                      "product_id": 1,
+                      "quantity": 2,
+                      "price": 1000
+                    },
+                    {
+                      "product_id": 3,
+                      "quantity": 1,
+                      "price": 500
+                    }
+                  ]
+                }
+            )
+        })
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+{
+  "user_id": 1,
+  "order_date": "2023-01-26",
+  "address_id": 1,
+  "id": 1,
+  "order_details": [
+  
+  ],
+  "order_status": {
+    "status": "string",
+    "id": 0
+  }
+}
+</pre>
+</details>
+
+#### Update an order
+```
+fetch('https://ecommerce-h6sh.onrender.com/orders/status/7',{
+            method:"PUT",
+            body:JSON.stringify(
+                {
+                    "status": "string",
+                }
+            )
+        })
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+  {
+    "status": "Updated status",
+    "id": 7
+  }
+</pre>
+</details>
+
+#### Delete an order
 ```
 fetch('https://ecommerce-h6sh.onrender.com/orders/status/7',{
             method:"DELETE"
