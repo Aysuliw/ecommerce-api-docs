@@ -31,6 +31,106 @@ fetch('https://ecommerce-h6sh.onrender.com/login',{
 </pre>
 </details>
 
+## Call Orders
+#### Get all call orders
+```
+fetch('https://ecommerce-h6sh.onrender.com/call_orders/')
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+[
+  {
+    "full_name": "some name",
+    "phone_number": "+998991234567",
+    "start_time": "12:00:00",
+    "end_time": "14:00:00",
+    "comment": "string",
+    "id": 1
+  },
+  {
+    "full_name": " name",
+    "phone_number": "+998991234567",
+    "start_time": "10:00:00",
+    "end_time": "14:00:00",
+    "comment": null,
+    "id": 3
+  }
+]
+</pre>
+</details>
+
+#### Get a single call order
+```
+fetch('https://ecommerce-h6sh.onrender.com/call_orders/1')
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+  {
+    "full_name": "some name",
+    "phone_number": "+998991234567",
+    "start_time": "12:00:00",
+    "end_time": "14:00:00",
+    "comment": "string",
+    "id": 1
+  }
+</pre>
+</details>
+
+
+#### Add new call order
+```
+fetch('https://ecommerce-h6sh.onrender.com/call_orders/',{
+            method:"POST",
+            body:JSON.stringify(
+                {
+                    "full_name": "some name",
+                    "phone_number": "+998991234567",
+                    "start_time": "12:00:00",
+                    "end_time": "14:00:00",
+                    "comment": "some comment"
+                }
+            )
+        })
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+  {
+    "full_name": "some name",
+    "phone_number": "+998991234567",
+    "start_time": "12:00:00",
+    "end_time": "14:00:00",
+    "comment": "some comment",
+    "id": 1
+  }
+</pre>
+</details>
+
+#### Delete a call order
+```
+fetch('https://ecommerce-h6sh.onrender.com/call_orders/7',{
+            method:"DELETE"
+        })
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+  {
+    "ok": True
+  }
+</pre>
+</details>
+
 ## Countries
 #### Get all countries
 ```
