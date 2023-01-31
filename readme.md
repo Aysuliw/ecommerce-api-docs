@@ -1384,6 +1384,8 @@ fetch('https://ecommerce-h6sh.onrender.com/orders/status/7',{
 </pre>
 </details>
 
+
+
 #### Get all orders
 ```
 fetch('https://ecommerce-h6sh.onrender.com/orders/')
@@ -1395,13 +1397,27 @@ fetch('https://ecommerce-h6sh.onrender.com/orders/')
 <pre>
 [
   {
-    "status": "string",
-    "id": 1
-  },
+    "user_id": 1,
+    "order_date": "2023-01-31",
+    "address_id": 1,
+    "id": 1,
+    "order_details": [],
+    "order_status": {
+      "status": "string",
+      "id": 0
+    }
+  }
   /*...*/
   {
-    "status": "string",
-    "id": 10
+    "user_id": 5,
+    "order_date": "2022-11-29",
+    "address_id": 7,
+    "id": 10,
+    "order_details": [],
+    "order_status": {
+      "status": "string",
+      "id": 0
+    }
   }
 ]
 </pre>
@@ -1410,7 +1426,7 @@ fetch('https://ecommerce-h6sh.onrender.com/orders/')
 
 #### Get all user orders
 ```
-fetch('https://ecommerce-h6sh.onrender.com/orders/')
+fetch('https://ecommerce-h6sh.onrender.com/orders/{user_id}')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -1419,21 +1435,35 @@ fetch('https://ecommerce-h6sh.onrender.com/orders/')
 <pre>
 [
   {
-    "status": "string",
-    "id": 1
-  },
+    "user_id": 1,
+    "order_date": "2023-01-31",
+    "address_id": 1,
+    "id": 1,
+    "order_details": [],
+    "order_status": {
+      "status": "string",
+      "id": 0
+    }
+  }
   /*...*/
   {
-    "status": "string",
-    "id": 10
+    "user_id": 1,
+    "order_date": "2022-11-29",
+    "address_id": 1,
+    "id": 10,
+    "order_details": [],
+    "order_status": {
+      "status": "string",
+      "id": 0
+    }
   }
 ]
 </pre>
 </details>
 
-#### Get a single user order 
+#### Get a single user order
 ```
-fetch('https://ecommerce-h6sh.onrender.com/orders/status/1/')
+fetch('https://ecommerce-h6sh.onrender.com/orders/{user_id}/{order_id}')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -1441,15 +1471,22 @@ fetch('https://ecommerce-h6sh.onrender.com/orders/status/1/')
 <details><summary>Output</summary>
 <pre>
   {
-    "status": "string",
-    "id": 1
+    "user_id": 1,
+    "order_date": "2022-11-29",
+    "address_id": 1,
+    "id": 10,
+    "order_details": [],
+    "order_status": {
+      "status": "string",
+      "id": 0
+    }
   }
 </pre>
 </details>
 
 #### Add new order
 ```
-fetch('https://ecommerce-h6sh.onrender.com/orders/status',{
+fetch('https://ecommerce-h6sh.onrender.com/orders/',{
             method:"POST",
             body:JSON.stringify(
                 {
@@ -1486,7 +1523,18 @@ fetch('https://ecommerce-h6sh.onrender.com/orders/status',{
   "address_id": 1,
   "id": 1,
   "order_details": [
-  
+    {
+        "order_id": 1,
+        "product_id": 1,
+        "quantity": 2,
+        "price": 1000
+    },
+    {
+        "order_id": 1,
+        "product_id": 3,
+        "quantity": 1,
+        "price": 500
+    }
   ],
   "order_status": {
     "status": "string",
@@ -1498,11 +1546,14 @@ fetch('https://ecommerce-h6sh.onrender.com/orders/status',{
 
 #### Update an order
 ```
-fetch('https://ecommerce-h6sh.onrender.com/orders/status/7',{
+fetch('https://ecommerce-h6sh.onrender.com/orders/{order_id}',{
             method:"PUT",
             body:JSON.stringify(
                 {
-                    "status": "string",
+                  "user_id": 1,
+                  "order_date": "2023-01-16",
+                  "address_id": 1,
+                  "order_status_id": 1
                 }
             )
         })
@@ -1513,15 +1564,29 @@ fetch('https://ecommerce-h6sh.onrender.com/orders/status/7',{
 <details><summary>Output</summary>
 <pre>
   {
-    "status": "Updated status",
-    "id": 7
+  "user_id": 1,
+  "order_date": "2023-01-26",
+  "address_id": 1,
+  "order_status_id": 1,
+  "id": 1,
+  "order_details": [
+    {
+      "product_id": 1,
+      "quantity": 1,
+      "price": 1000
+    }
+  ],
+  "order_status": {
+    "status": " status",
+    "id": 1
   }
+}
 </pre>
 </details>
 
 #### Delete an order
 ```
-fetch('https://ecommerce-h6sh.onrender.com/orders/status/7',{
+fetch('https://ecommerce-h6sh.onrender.com/orders/{user_id}/{order_id}',{
             method:"DELETE"
         })
             .then(res=>res.json())
