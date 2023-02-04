@@ -6,6 +6,31 @@ URL - https://ecommerce-h6sh.onrender.com/
 
 ### The documentation is not complete yet
 
+Structure of documentation
+- [Login](#login)
+- [CallOrders](#call-orders)
+    - [Get all call orders](#get-all-call-orders)
+    - [Get a single call order](#get-a-single-call-order)
+    - [Add new call order](#add-new-call-order)
+    - [Delete a call order](#delete-a-call-order)
+- [Countries](#countries)
+  - [Get all countries](#get-all-countries)
+  - [Get a single country](#get-a-single-country)
+  - [Add new country](#add-new-country)
+  - [Update a country](#update-a-country)
+  - [Delete a country](#delete-a-country)
+- [Categories](#categories)
+  - [Get all categories](#get-all-categories)
+  - [Get a single category](#get-a-single-category)
+  - [Add new category](#add-new-category)
+  - [Update a category](#update-a-category)
+  - [Delete a category](#delete-a-category)
+- [Products](#products)
+- [Users](#users)
+- [Attributes](#attributes)
+- [Orders](#orders)
+- [Reviews](#reviews)
+- [Comments](#comments)
 
 ## Login
 ```
@@ -1700,3 +1725,9 @@ fetch('https://ecommerce-h6sh.onrender.com/orders/{user_id}/{order_id}',{
   }
 </pre>
 </details>
+
+## Reviews
+Coming soon...
+
+## Comments
+Coming soon...
