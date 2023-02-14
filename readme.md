@@ -7,7 +7,7 @@ URL - https://ecommerce-h6sh.onrender.com/
 ### The documentation is not complete yet
 
 Structure of documentation
-- [Login](#login)
+- [Login](#login) 
 - [CallOrders](#call-orders)
     - [Get all call orders](#get-all-call-orders)
     - [Get a single call order](#get-a-single-call-order)
@@ -27,6 +27,8 @@ Structure of documentation
   - [Delete a category](#delete-a-category)
 - [Products](#products)
 - [Users](#users)
+  - [Add new user](#add-new-user)
+  - [Add new admin](#add-new-admin)
 - [Attributes](#attributes)
 - [Orders](#orders)
 - [Reviews](#reviews)
@@ -34,7 +36,7 @@ Structure of documentation
 
 ## Login
 ```
-fetch('https://ecommerce-h6sh.onrender.com/login',{
+fetch('https://ecommerce-h6sh.onrender.com/token',{
           method: 'POST',
           body: JSON.stringify({
               username: 'any username',
@@ -227,7 +229,7 @@ fetch('https://ecommerce-h6sh.onrender.com/countries',{
             method:"POST",
             body:JSON.stringify(
                 {
-                    country_name: 'new country name,
+                    "country_name": "new country name",
                 }
             )
         })
@@ -250,7 +252,7 @@ fetch('https://ecommerce-h6sh.onrender.com/countries/7',{
             method:"PUT",
             body:JSON.stringify(
                 {
-                    country_name: 'Updated country name,
+                    "country_name": "Updated country name",
                 }
             )
         })
@@ -414,7 +416,7 @@ fetch('https://ecommerce-h6sh.onrender.com/categories',{
             body:JSON.stringify(
                 {
                    "name": "new category",
-                   "parent_category_id": null/1
+                   "parent_category_id": null/int
                 }
             )
         })
@@ -1019,7 +1021,6 @@ fetch('https://ecommerce-h6sh.onrender.com/users',{
                 {
                     "user": {
                         "username": "string",
-                        "is_admin": false,
                         "password": "string"
                     },
                     "user_detail": {
@@ -1050,7 +1051,74 @@ fetch('https://ecommerce-h6sh.onrender.com/users',{
 <pre>
 {
     "username": "string",
-    "is_admin": true,
+    "id": 1,
+    "user_detail": {
+        "first_name": "Any name",
+        "last_name": "Any surname",
+        "user_image": "www.somewebsite.com/user1.jpg",
+        "id": 1
+    },
+    "phone_numbers": [
+        {
+            "phone_number": "+998991234567",
+            "type": "mobile",
+            "id": 1
+        }
+    ],
+    "addresses": [
+        {
+            "street_address": "street 50",
+            "postal_code": "123100",
+            "city": "Nukus",
+            "id": 1,
+            "country": {
+                "country_name": "Uzbekistan",
+                "id": 2
+            }
+        }
+    ]
+}
+</pre>
+</details>
+
+#### Add new admin
+```
+fetch('https://ecommerce-h6sh.onrender.com/users/admin',{
+            method:"POST",
+            body:JSON.stringify(
+                {
+                    "user": {
+                        "username": "string",
+                        "password": "string"
+                    },
+                    "user_detail": {
+                        "first_name": "Any name",
+                        "last_name": "Any surname",
+                        "user_image": "www.somewebsite.com/user1.jpg"
+                    },
+                    "user_phones": [
+                        {
+                            "phone_number": "+998991234567",
+                            "type": "mobile"
+                        }
+                    ],
+                    "user_address": {
+                        "street_address": "street 50",
+                        "postal_code": "123100",
+                        "city": "Nukus",
+                        "country_id": 2
+                    }
+                }
+            )
+        })
+        .then(res=>res.json())
+        .then(json=>console.log(json))
+```
+
+<details><summary>Output</summary>
+<pre>
+{
+    "username": "string",
     "id": 1,
     "user_detail": {
         "first_name": "Any name",
@@ -1089,7 +1157,6 @@ fetch('https://ecommerce-h6sh.onrender.com/users/7',{
                 {
                     "user": {
                         "username": "new username",
-                        "is_admin": true
                     },
                     "user_detail": {
                         "first_name": "new name",
@@ -1107,7 +1174,6 @@ fetch('https://ecommerce-h6sh.onrender.com/users/7',{
 <pre>
     {
         "username": "new username",
-        "is_admin": true,
         "id": 1,
         "user_detail": {
             "first_name": "new name",
@@ -1319,7 +1385,8 @@ fetch('https://ecommerce-h6sh.onrender.com/attributes/{attribute_id}/variants',{
             method:"POST",
             body:JSON.stringify(
                 {
-                  "value": "blue"
+                  "value": "blue",
+                  "attribute_id": int
                 }
             )
         })
