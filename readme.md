@@ -1,7 +1,7 @@
 
 # E-commerce API Documentation 
 
-URL - https://ecommerce-h6sh.onrender.com/
+URL - https://ecommerce.icedev.uz//
 
 
 ### The documentation is not complete yet
@@ -36,7 +36,7 @@ Structure of documentation
 
 ## Login
 ```
-fetch('https://ecommerce-h6sh.onrender.com/token',{
+fetch('https://ecommerce.icedev.uz//token',{
           method: 'POST',
           body: JSON.stringify({
               username: 'any username',
@@ -61,7 +61,7 @@ fetch('https://ecommerce-h6sh.onrender.com/token',{
 ## Call Orders
 #### Get all call orders
 ```
-fetch('https://ecommerce-h6sh.onrender.com/call_orders/')
+fetch('https://ecommerce.icedev.uz//call_orders/')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -91,7 +91,7 @@ fetch('https://ecommerce-h6sh.onrender.com/call_orders/')
 
 #### Get a single call order
 ```
-fetch('https://ecommerce-h6sh.onrender.com/call_orders/1')
+fetch('https://ecommerce.icedev.uz//call_orders/1')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -112,7 +112,7 @@ fetch('https://ecommerce-h6sh.onrender.com/call_orders/1')
 
 #### Add new call order
 ```
-fetch('https://ecommerce-h6sh.onrender.com/call_orders/',{
+fetch('https://ecommerce.icedev.uz//call_orders/',{
             method:"POST",
             body:JSON.stringify(
                 {
@@ -143,7 +143,7 @@ fetch('https://ecommerce-h6sh.onrender.com/call_orders/',{
 
 #### Delete a call order
 ```
-fetch('https://ecommerce-h6sh.onrender.com/call_orders/7',{
+fetch('https://ecommerce.icedev.uz//call_orders/7',{
             method:"DELETE"
         })
             .then(res=>res.json())
@@ -161,7 +161,7 @@ fetch('https://ecommerce-h6sh.onrender.com/call_orders/7',{
 ## Countries
 #### Get all countries
 ```
-fetch('https://ecommerce-h6sh.onrender.com/countries')
+fetch('https://ecommerce.icedev.uz//countries')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -184,7 +184,7 @@ fetch('https://ecommerce-h6sh.onrender.com/countries')
 
 #### Get a single country
 ```
-fetch('https://ecommerce-h6sh.onrender.com/countries/1')
+fetch('https://ecommerce.icedev.uz//countries/1')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -201,7 +201,7 @@ fetch('https://ecommerce-h6sh.onrender.com/countries/1')
 
 #### Limit results
 ```
-fetch('https://ecommerce-h6sh.onrender.com/countries?limit=5&offset=5')
+fetch('https://ecommerce.icedev.uz//countries?limit=5&offset=5')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -225,7 +225,7 @@ fetch('https://ecommerce-h6sh.onrender.com/countries?limit=5&offset=5')
 
 #### Add new country
 ```
-fetch('https://ecommerce-h6sh.onrender.com/countries',{
+fetch('https://ecommerce.icedev.uz//countries',{
             method:"POST",
             body:JSON.stringify(
                 {
@@ -248,7 +248,7 @@ fetch('https://ecommerce-h6sh.onrender.com/countries',{
 
 #### Update a country
 ```
-fetch('https://ecommerce-h6sh.onrender.com/countries/7',{
+fetch('https://ecommerce.icedev.uz//countries/7',{
             method:"PUT",
             body:JSON.stringify(
                 {
@@ -271,7 +271,7 @@ fetch('https://ecommerce-h6sh.onrender.com/countries/7',{
 
 #### Delete a country
 ```
-fetch('https://ecommerce-h6sh.onrender.com/countries/7',{
+fetch('https://ecommerce.icedev.uz//countries/7',{
             method:"DELETE"
         })
             .then(res=>res.json())
@@ -290,7 +290,7 @@ fetch('https://ecommerce-h6sh.onrender.com/countries/7',{
 
 #### Get all categories
 ```
-fetch('https://ecommerce-h6sh.onrender.com/categories')
+fetch('https://ecommerce.icedev.uz//categories')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -339,7 +339,7 @@ fetch('https://ecommerce-h6sh.onrender.com/categories')
 
 #### Get a single category
 ```
-fetch('https://ecommerce-h6sh.onrender.com/categories/1')
+fetch('https://ecommerce.icedev.uz//categories/1')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -362,7 +362,7 @@ fetch('https://ecommerce-h6sh.onrender.com/categories/1')
 
 #### Limit results
 ```
-fetch('https://ecommerce-h6sh.onrender.com/categories?limit=5&offset=5')
+fetch('https://ecommerce.icedev.uz//categories?limit=5&offset=5')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -411,7 +411,7 @@ fetch('https://ecommerce-h6sh.onrender.com/categories?limit=5&offset=5')
 
 #### Add new category
 ```
-fetch('https://ecommerce-h6sh.onrender.com/categories',{
+fetch('https://ecommerce.icedev.uz//categories',{
             method:"POST",
             body:JSON.stringify(
                 {
@@ -440,7 +440,7 @@ fetch('https://ecommerce-h6sh.onrender.com/categories',{
 
 #### Update a category
 ```
-fetch('https://ecommerce-h6sh.onrender.com/categories/7',{
+fetch('https://ecommerce.icedev.uz//categories/7',{
             method:"PUT",
             body:JSON.stringify(
                 {
@@ -469,7 +469,7 @@ fetch('https://ecommerce-h6sh.onrender.com/categories/7',{
 
 #### Delete a category
 ```
-fetch('https://ecommerce-h6sh.onrender.com/categories/7',{
+fetch('https://ecommerce.icedev.uz//categories/7',{
             method:"DELETE"
         })
             .then(res=>res.json())
@@ -489,7 +489,7 @@ fetch('https://ecommerce-h6sh.onrender.com/categories/7',{
 
 #### Get all products
 ```
-fetch('https://ecommerce-h6sh.onrender.com/products/')
+fetch('https://ecommerce.icedev.uz//products/')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -560,7 +560,7 @@ fetch('https://ecommerce-h6sh.onrender.com/products/')
 
 #### Limit products
 ```
-fetch('https://ecommerce-h6sh.onrender.com/products?limit=5')
+fetch('https://ecommerce.icedev.uz//products?limit=5')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -631,7 +631,7 @@ fetch('https://ecommerce-h6sh.onrender.com/products?limit=5')
 
 #### Get products by category
 ```
-fetch('https://ecommerce-h6sh.onrender.com/categories/1/products/')
+fetch('https://ecommerce.icedev.uz//categories/1/products/')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -703,7 +703,7 @@ fetch('https://ecommerce-h6sh.onrender.com/categories/1/products/')
 
 #### Get a single product
 ```
-fetch('https://ecommerce-h6sh.onrender.com/products/1')
+fetch('https://ecommerce.icedev.uz//products/1')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -744,7 +744,7 @@ fetch('https://ecommerce-h6sh.onrender.com/products/1')
 
 #### Add new product
 ```
-fetch('https://ecommerce-h6sh.onrender.com/products',{
+fetch('https://ecommerce.icedev.uz//products',{
             method:"POST",
             body:JSON.stringify(
                 {
@@ -806,7 +806,7 @@ fetch('https://ecommerce-h6sh.onrender.com/products',{
 
 #### Update a product
 ```
-fetch('https://ecommerce-h6sh.onrender.com/products/1',{
+fetch('https://ecommerce.icedev.uz//products/1',{
             method:"PUT",
             body:JSON.stringify(
                 {
@@ -858,7 +858,7 @@ fetch('https://ecommerce-h6sh.onrender.com/products/1',{
 
 #### Delete a product
 ```
-fetch('https://ecommerce-h6sh.onrender.com/products/7',{
+fetch('https://ecommerce.icedev.uz//products/7',{
             method:"DELETE"
         })
             .then(res=>res.json())
@@ -877,7 +877,7 @@ fetch('https://ecommerce-h6sh.onrender.com/products/7',{
 ## Users
 #### Get all users
 ```
-fetch('https://ecommerce-h6sh.onrender.com/users/')
+fetch('https://ecommerce.icedev.uz//users/')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -925,7 +925,7 @@ fetch('https://ecommerce-h6sh.onrender.com/users/')
 
 #### Limit results
 ```
-fetch('https://ecommerce-h6sh.onrender.com/users?limit=5')
+fetch('https://ecommerce.icedev.uz//users?limit=5')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -972,7 +972,7 @@ fetch('https://ecommerce-h6sh.onrender.com/users?limit=5')
 
 #### Get a single user
 ```
-fetch('https://ecommerce-h6sh.onrender.com/users/1')
+fetch('https://ecommerce.icedev.uz//users/1')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -1015,7 +1015,7 @@ fetch('https://ecommerce-h6sh.onrender.com/users/1')
 
 #### Add new user
 ```
-fetch('https://ecommerce-h6sh.onrender.com/users',{
+fetch('https://ecommerce.icedev.uz//users',{
             method:"POST",
             body:JSON.stringify(
                 {
@@ -1083,7 +1083,7 @@ fetch('https://ecommerce-h6sh.onrender.com/users',{
 
 #### Add new admin
 ```
-fetch('https://ecommerce-h6sh.onrender.com/users/admin',{
+fetch('https://ecommerce.icedev.uz//users/admin',{
             method:"POST",
             body:JSON.stringify(
                 {
@@ -1151,7 +1151,7 @@ fetch('https://ecommerce-h6sh.onrender.com/users/admin',{
 
 #### Update a user
 ```
-fetch('https://ecommerce-h6sh.onrender.com/users/7',{
+fetch('https://ecommerce.icedev.uz//users/7',{
             method:"PUT",
             body:JSON.stringify(
                 {
@@ -1206,7 +1206,7 @@ fetch('https://ecommerce-h6sh.onrender.com/users/7',{
 
 #### Delete a user
 ```
-fetch('https://ecommerce-h6sh.onrender.com/users/7',{
+fetch('https://ecommerce.icedev.uz//users/7',{
             method:"DELETE"
         })
             .then(res=>res.json())
@@ -1226,7 +1226,7 @@ fetch('https://ecommerce-h6sh.onrender.com/users/7',{
 
 #### Get category attributes
 ```
-fetch('https://ecommerce-h6sh.onrender.com/categories/{category_id}/attributes')
+fetch('https://ecommerce.icedev.uz//categories/{category_id}/attributes')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -1267,7 +1267,7 @@ fetch('https://ecommerce-h6sh.onrender.com/categories/{category_id}/attributes')
 
 #### Get a single attribute
 ```
-fetch('https://ecommerce-h6sh.onrender.com/attributes/1')
+fetch('https://ecommerce.icedev.uz//attributes/1')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -1293,7 +1293,7 @@ fetch('https://ecommerce-h6sh.onrender.com/attributes/1')
 
 #### Limit results
 ```
-fetch('https://ecommerce-h6sh.onrender.com/categories/{category_id}/attributes?limit=5&offset=0')
+fetch('https://ecommerce.icedev.uz//categories/{category_id}/attributes?limit=5&offset=0')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -1335,7 +1335,7 @@ fetch('https://ecommerce-h6sh.onrender.com/categories/{category_id}/attributes?l
 
 #### Add new attribute
 ```
-fetch('https://ecommerce-h6sh.onrender.com/attributes',{
+fetch('https://ecommerce.icedev.uz//attributes',{
             method:"POST",
             body:JSON.stringify(
                 {
@@ -1381,7 +1381,7 @@ fetch('https://ecommerce-h6sh.onrender.com/attributes',{
 
 #### Add new attribute variant
 ```
-fetch('https://ecommerce-h6sh.onrender.com/attributes/{attribute_id}/variants',{
+fetch('https://ecommerce.icedev.uz//attributes/{attribute_id}/variants',{
             method:"POST",
             body:JSON.stringify(
                 {
@@ -1404,7 +1404,7 @@ fetch('https://ecommerce-h6sh.onrender.com/attributes/{attribute_id}/variants',{
 
 #### Update an attribute
 ```
-fetch('https://ecommerce-h6sh.onrender.com/attributes/7',{
+fetch('https://ecommerce.icedev.uz//attributes/7',{
             method:"PUT",
             body:JSON.stringify(
                 {
@@ -1439,7 +1439,7 @@ fetch('https://ecommerce-h6sh.onrender.com/attributes/7',{
 
 #### Delete an attribute
 ```
-fetch('https://ecommerce-h6sh.onrender.com/attributes/7',{
+fetch('https://ecommerce.icedev.uz//attributes/7',{
             method:"DELETE"
         })
             .then(res=>res.json())
@@ -1456,7 +1456,7 @@ fetch('https://ecommerce-h6sh.onrender.com/attributes/7',{
 
 #### Delete an attribute variant
 ```
-fetch('https://ecommerce-h6sh.onrender.com/attributes/{attribute_id}/variants/{variant_id}',{
+fetch('https://ecommerce.icedev.uz//attributes/{attribute_id}/variants/{variant_id}',{
             method:"DELETE"
         })
             .then(res=>res.json())
@@ -1475,7 +1475,7 @@ fetch('https://ecommerce-h6sh.onrender.com/attributes/{attribute_id}/variants/{v
 ### Orders
 #### Get all order status
 ```
-fetch('https://ecommerce-h6sh.onrender.com/orders/status/')
+fetch('https://ecommerce.icedev.uz//orders/status/')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -1498,7 +1498,7 @@ fetch('https://ecommerce-h6sh.onrender.com/orders/status/')
 
 #### Get a single order status
 ```
-fetch('https://ecommerce-h6sh.onrender.com/orders/status/1/')
+fetch('https://ecommerce.icedev.uz//orders/status/1/')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -1514,7 +1514,7 @@ fetch('https://ecommerce-h6sh.onrender.com/orders/status/1/')
 
 #### Add new order status
 ```
-fetch('https://ecommerce-h6sh.onrender.com/orders/status',{
+fetch('https://ecommerce.icedev.uz//orders/status',{
             method:"POST",
             body:JSON.stringify(
                 {
@@ -1537,7 +1537,7 @@ fetch('https://ecommerce-h6sh.onrender.com/orders/status',{
 
 #### Update an order status
 ```
-fetch('https://ecommerce-h6sh.onrender.com/orders/status/7',{
+fetch('https://ecommerce.icedev.uz//orders/status/7',{
             method:"PUT",
             body:JSON.stringify(
                 {
@@ -1560,7 +1560,7 @@ fetch('https://ecommerce-h6sh.onrender.com/orders/status/7',{
 
 #### Delete an order status
 ```
-fetch('https://ecommerce-h6sh.onrender.com/orders/status/7',{
+fetch('https://ecommerce.icedev.uz//orders/status/7',{
             method:"DELETE"
         })
             .then(res=>res.json())
@@ -1579,7 +1579,7 @@ fetch('https://ecommerce-h6sh.onrender.com/orders/status/7',{
 
 #### Get all orders
 ```
-fetch('https://ecommerce-h6sh.onrender.com/orders/')
+fetch('https://ecommerce.icedev.uz//orders/')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -1617,7 +1617,7 @@ fetch('https://ecommerce-h6sh.onrender.com/orders/')
 
 #### Get all user orders
 ```
-fetch('https://ecommerce-h6sh.onrender.com/orders/{user_id}')
+fetch('https://ecommerce.icedev.uz//orders/{user_id}')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -1654,7 +1654,7 @@ fetch('https://ecommerce-h6sh.onrender.com/orders/{user_id}')
 
 #### Get a single user order
 ```
-fetch('https://ecommerce-h6sh.onrender.com/orders/{user_id}/{order_id}')
+fetch('https://ecommerce.icedev.uz//orders/{user_id}/{order_id}')
             .then(res=>res.json())
             .then(json=>console.log(json))
 ```
@@ -1677,7 +1677,7 @@ fetch('https://ecommerce-h6sh.onrender.com/orders/{user_id}/{order_id}')
 
 #### Add new order
 ```
-fetch('https://ecommerce-h6sh.onrender.com/orders/',{
+fetch('https://ecommerce.icedev.uz//orders/',{
             method:"POST",
             body:JSON.stringify(
                 {
@@ -1737,7 +1737,7 @@ fetch('https://ecommerce-h6sh.onrender.com/orders/',{
 
 #### Update an order
 ```
-fetch('https://ecommerce-h6sh.onrender.com/orders/{order_id}',{
+fetch('https://ecommerce.icedev.uz//orders/{order_id}',{
             method:"PUT",
             body:JSON.stringify(
                 {
@@ -1777,7 +1777,7 @@ fetch('https://ecommerce-h6sh.onrender.com/orders/{order_id}',{
 
 #### Delete an order
 ```
-fetch('https://ecommerce-h6sh.onrender.com/orders/{user_id}/{order_id}',{
+fetch('https://ecommerce.icedev.uz//orders/{user_id}/{order_id}',{
             method:"DELETE"
         })
             .then(res=>res.json())
