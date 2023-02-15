@@ -1386,7 +1386,6 @@ fetch('https://ecommerce-h6sh.onrender.com/attributes/{attribute_id}/variants',{
             body:JSON.stringify(
                 {
                   "value": "blue",
-                  "attribute_id": int
                 }
             )
         })
