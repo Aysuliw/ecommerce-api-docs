@@ -146,7 +146,7 @@ fetch('https://ecommerce.icedev.uz/call_orders/',{
 
 #### Delete a call order
 > **Note**
-> Only for admins
+> *Only admin can delete*
 
 ```
 fetch('https://ecommerce.icedev.uz/call_orders/7',{
@@ -230,6 +230,8 @@ fetch('https://ecommerce.icedev.uz/countries?limit=5&offset=5')
 
 
 #### Add new country
+> **Note**
+> *Only admin can add*
 ```
 fetch('https://ecommerce.icedev.uz/countries',{
             method:"POST",
@@ -253,6 +255,8 @@ fetch('https://ecommerce.icedev.uz/countries',{
 </details>
 
 #### Update a country
+> **Note**
+> *Only admin can update*
 ```
 fetch('https://ecommerce.icedev.uz/countries/7',{
             method:"PUT",
@@ -276,6 +280,8 @@ fetch('https://ecommerce.icedev.uz/countries/7',{
 </details>
 
 #### Delete a country
+> **Note**
+> *Only admin can delete*
 ```
 fetch('https://ecommerce.icedev.uz/countries/7',{
             method:"DELETE"
@@ -416,6 +422,8 @@ fetch('https://ecommerce.icedev.uz/categories?limit=5&offset=5')
 </details>
 
 #### Add new category
+> **Note**
+> *Only admin can add*
 ```
 fetch('https://ecommerce.icedev.uz/categories',{
             method:"POST",
@@ -445,6 +453,8 @@ fetch('https://ecommerce.icedev.uz/categories',{
 </details>
 
 #### Update a category
+> **Note**
+> *Only admin can update*
 ```
 fetch('https://ecommerce.icedev.uz/categories/7',{
             method:"PUT",
@@ -474,6 +484,8 @@ fetch('https://ecommerce.icedev.uz/categories/7',{
 </details>
 
 #### Delete a category
+> **Note**
+> *Only admin can delete*
 ```
 fetch('https://ecommerce.icedev.uz/categories/7',{
             method:"DELETE"
@@ -749,6 +761,8 @@ fetch('https://ecommerce.icedev.uz/products/1')
 
 
 #### Add new product
+> **Note**
+> *Only admin can add*
 ```
 fetch('https://ecommerce.icedev.uz/products',{
             method:"POST",
@@ -811,6 +825,8 @@ fetch('https://ecommerce.icedev.uz/products',{
 </details>
 
 #### Update a product
+> **Note**
+> *Only admin can update*
 ```
 fetch('https://ecommerce.icedev.uz/products/1',{
             method:"PUT",
@@ -863,6 +879,8 @@ fetch('https://ecommerce.icedev.uz/products/1',{
 </details>
 
 #### Delete a product
+> **Note**
+> *Only admin can delete*
 ```
 fetch('https://ecommerce.icedev.uz/products/7',{
             method:"DELETE"
@@ -881,6 +899,8 @@ fetch('https://ecommerce.icedev.uz/products/7',{
 
 
 #### Add new product variant
+> **Note**
+> *Only admin can add*
 ```
 fetch('https://ecommerce.icedev.uz/products/{product_id}/attributes',{
             method:"POST",
@@ -958,6 +978,8 @@ fetch('https://ecommerce.icedev.uz/products/{product_id}/attributes')
 
 
 #### Delete a product attribute
+> **Note**
+> *Only admin can delete*
 ```
 fetch('https://ecommerce.icedev.uz/products/{product_id}/{variant_id}',{
             method:"DELETE"
@@ -976,6 +998,8 @@ fetch('https://ecommerce.icedev.uz/products/{product_id}/{variant_id}',{
 
 ## Users
 #### Get all users
+> **Note**
+> *Only admin can get*
 ```
 fetch('https://ecommerce.icedev.uz/users/')
             .then(res=>res.json())
@@ -1182,6 +1206,8 @@ fetch('https://ecommerce.icedev.uz/users',{
 </details>
 
 #### Add new admin
+> **Note**
+> *Only admin can add*
 ```
 fetch('https://ecommerce.icedev.uz/users/admin',{
             method:"POST",
@@ -1250,6 +1276,8 @@ fetch('https://ecommerce.icedev.uz/users/admin',{
 </details>
 
 #### Update a user
+> **Note**
+> *Only authenticated user can update*
 ```
 fetch('https://ecommerce.icedev.uz/users/7',{
             method:"PUT",
@@ -1305,6 +1333,8 @@ fetch('https://ecommerce.icedev.uz/users/7',{
 </details>
 
 #### Delete a user
+> **Note**
+> *Only admin can delete*
 ```
 fetch('https://ecommerce.icedev.uz/users/7',{
             method:"DELETE"
@@ -1434,6 +1464,8 @@ fetch('https://ecommerce.icedev.uz/categories/{category_id}/attributes?limit=5&o
 
 
 #### Add new attribute
+> **Note**
+> *Only admin can add*
 ```
 fetch('https://ecommerce.icedev.uz/attributes',{
             method:"POST",
@@ -1480,6 +1512,8 @@ fetch('https://ecommerce.icedev.uz/attributes',{
 
 
 #### Add new attribute variant
+> **Note**
+> *Only admin can add*
 ```
 fetch('https://ecommerce.icedev.uz/attributes/{attribute_id}/variants',{
             method:"POST",
@@ -1508,6 +1542,8 @@ fetch('https://ecommerce.icedev.uz/attributes/{attribute_id}/variants',{
 </details>
 
 #### Update an attribute
+> **Note**
+> *Only admin can update*
 ```
 fetch('https://ecommerce.icedev.uz/attributes/7',{
             method:"PUT",
@@ -1543,6 +1579,8 @@ fetch('https://ecommerce.icedev.uz/attributes/7',{
 </details>
 
 #### Delete an attribute
+> **Note**
+> *Only admin can delete*
 ```
 fetch('https://ecommerce.icedev.uz/attributes/7',{
             method:"DELETE"
@@ -1560,6 +1598,8 @@ fetch('https://ecommerce.icedev.uz/attributes/7',{
 </details>
 
 #### Delete an attribute variant
+> **Note**
+> *Only admin can delete*
 ```
 fetch('https://ecommerce.icedev.uz/attributes/{attribute_id}/variants/{variant_id}',{
             method:"DELETE"
@@ -1618,6 +1658,8 @@ fetch('https://ecommerce.icedev.uz/orders/status/1/')
 </details>
 
 #### Add new order status
+> **Note**
+> *Only admin can add*
 ```
 fetch('https://ecommerce.icedev.uz/orders/status',{
             method:"POST",
@@ -1641,6 +1683,8 @@ fetch('https://ecommerce.icedev.uz/orders/status',{
 </details>
 
 #### Update an order status
+> **Note**
+> *Only admin can update*
 ```
 fetch('https://ecommerce.icedev.uz/orders/status/7',{
             method:"PUT",
@@ -1664,6 +1708,8 @@ fetch('https://ecommerce.icedev.uz/orders/status/7',{
 </details>
 
 #### Delete an order status
+> **Note**
+> *Only admin can delete*
 ```
 fetch('https://ecommerce.icedev.uz/orders/status/7',{
             method:"DELETE"
@@ -1683,6 +1729,8 @@ fetch('https://ecommerce.icedev.uz/orders/status/7',{
 
 
 #### Get all orders
+> **Note**
+> *Only admin can get*
 ```
 fetch('https://ecommerce.icedev.uz/orders/')
             .then(res=>res.json())
@@ -1881,6 +1929,8 @@ fetch('https://ecommerce.icedev.uz/orders/{order_id}',{
 </details>
 
 #### Delete an order
+> **Note**
+> *Only admin can delete*
 ```
 fetch('https://ecommerce.icedev.uz/orders/{user_id}/{order_id}',{
             method:"DELETE"
@@ -1900,6 +1950,8 @@ fetch('https://ecommerce.icedev.uz/orders/{user_id}/{order_id}',{
 ## Reviews
 
 #### Add new review
+> **Note**
+> *Only authenticated user can leave review*
 ```
 fetch('https://ecommerce.icedev.uz/products/{product_id}/reviews',{
             method:"POST",
