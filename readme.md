@@ -143,7 +143,11 @@ fetch('https://ecommerce.icedev.uz/call_orders/',{
 </pre>
 </details>
 
+
 #### Delete a call order
+> **Note**
+> Only for admins
+
 ```
 fetch('https://ecommerce.icedev.uz/call_orders/7',{
             method:"DELETE"
