@@ -26,6 +26,9 @@ Structure of documentation
   - [Update a category](#update-a-category)
   - [Delete a category](#delete-a-category)
 - [Products](#products)
+   - [Sort products by min and max price](#sort-products-by-min-and-max-price)
+   - [Filter products by attribute values](#filter-products-by-attributes)
+   - [Sort products](#sort-products)
    - [Add product attributes]()
    - [Delete product attributes]()
 - [Users](#users)
@@ -717,6 +720,32 @@ fetch('https://ecommerce.icedev.uz/categories/1/products/')
 ]
 </pre>
 </details>
+
+#### Sort products by min and max price
+```
+fetch('https://ecommerce.icedev.uz/categories/{category_id}/products?min_price=500&max_price=1000')
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+#### Filter products by attributes
+```
+fetch('https://ecommerce.icedev.uz/categories/{category_id}/products?filters=variant_id&filters=variant_id&filters=variant_id&....')
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
+
+#### Sort products
+
+> **sort=cheap**   *# sort products by ascending price*
+>
+> **sort=expensive**   *# sort products by descending price*
+
+```
+fetch('https://ecommerce.icedev.uz/categories/{category_id}/products?sort=cheap')
+            .then(res=>res.json())
+            .then(json=>console.log(json))
+```
 
 
 #### Get a single product
