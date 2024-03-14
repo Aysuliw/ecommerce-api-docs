@@ -8,6 +8,8 @@ URL - http://147.45.107.233/api/
 
 Structure of documentation
 
+- [Users](#users)
+  - [Registration](#registration)
 - [Categories](#categories)
   - [Get all categories](#get-all-categories)
   - [Get a single category](#get-a-single-category)
@@ -16,6 +18,80 @@ Structure of documentation
    - [Get products by category](#get-products-by-category)
    - [Sort products](#sort-products)
    - [Get a single product](#get-a-single-product)
+
+## Users
+### Registration
+```
+http://147.45.107.233/api/users
+POST Request  Content-Type: application/json
+body:
+{
+    "first_name": "str",
+    "last_name": "str",
+    "password": "str",
+    "phone": "998991234567",
+    "date_of_birth": 2000-10-23, (Format: YYYY-MM-DD)
+    "gender": "male"  (Choices: "male"/"female")
+} 
+```
+
+<details><summary>Response</summary>
+<pre>
+{
+    "success": true,
+    "errMessage": null,
+    "errorCode": null,
+    "data": {
+        "user": {
+            "id": 6,
+            "first_name": "Name",
+            "last_name": "Surname",
+            "phone": "998991234567",
+            "date_of_birth": "2000-02-10",
+            "gender": "male",
+            "is_active": False,
+        }
+    }
+}
+</pre>
+</details>
+
+### Verification (OTP)
+```
+http://147.45.107.233/api/users/{pk}/verify
+POST request Content-Type: application/json
+body:
+{
+    "otp": "524687"  (Expire time: 1 min)
+} 
+```
+
+<details><summary>Response</summary>
+<pre>
+{
+    "success": true,
+    "errMessage": null,
+    "errorCode": null
+}
+</pre>
+</details>
+
+
+### Ask Code again (Qaytadan kod soraw)
+```
+http://147.45.107.233/api/users/{pk}/otp
+POST request Content-Type: application/json
+```
+
+<details><summary>Response</summary>
+<pre>
+{
+    "success": true,
+    "errMessage": null,
+    "errorCode": null
+}
+</pre>
+</details>
 
 ## Categories
 
