@@ -10,6 +10,8 @@ Structure of documentation
 
 - [Users](#users)
   - [Registration](#registration)
+  - [Verification (OTP)](#verification-otp)
+  - [Ask Code Again (OTP)](#ask-code-again-qaytadan-kod-soraw)
 - [Categories](#categories)
   - [Get all categories](#get-all-categories)
   - [Get a single category](#get-a-single-category)
